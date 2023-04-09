@@ -1,0 +1,26 @@
+# Arquivos de log
+logs/
+*.log
+
+# Dependências instaladas pelo npm ou yarn
+node_modules/
+node_modules\ms
+package-lock.json
+yarn.lock
+.yarn-integrity
+# Arquivos compilados ou gerados automaticamente
+dist/
+build/
+*.tsbuildinfo
+
+# Arquivos de credenciais ou sensíveis
+.env
+.env.*
+*.pem
+
+# Arquivos e pastas específicos para o seu projeto
+public/
+coverage/
+
+# Arquivos de configuração do VS Code
+.vscode/

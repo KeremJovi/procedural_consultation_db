@@ -1,14 +1,11 @@
-import { Router } from 'express';
-import { Request, Response } from 'express';
+import {Router} from 'express';
+import {processesCreateController, processesListCrontoller} from './app/controllers/processesController';
+
 
 const routes = Router();
 
-routes.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
-});
+routes.post('/populating_bank', processesCreateController);
+routes.get('/', processesListCrontoller);
 
-routes.get('/populating_bank', (req: Request, res: Response) => {
-  res.send('Populating Bank');
-});
 
 export default routes;

@@ -1,4 +1,5 @@
-import { IProcess } from "../../typeConf";
+import HandlingError from "../../midlleware/Error/HandlingError";
+import {IProcess} from "../../typeConf";
 import Processes from "../model/Processes";
 import ProcessDTO from "./DTO/ProcessDTO";
 
@@ -24,6 +25,9 @@ export default class CreateProcesses {
 
     const createProcesses = await Processes.insertMany(processDTOs)
 
+    if (!createProcesses) {
+      throw new HandlingError("Unable to create process", 400)
+    }
     return createProcesses
   }
 }

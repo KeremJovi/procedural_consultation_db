@@ -1,3 +1,4 @@
+import HandlingError from "../../midlleware/Error/HandlingError";
 import Processes from "../model/Processes";
 
 
@@ -33,6 +34,9 @@ export default class ListProcesses {
 
     const processes = await Processes.find(filters.length ? {$or: filters} : {});
 
+    if (!processes) {
+      throw new HandlingError("Process not found! ", 404)
+    }
     return processes
   }
 

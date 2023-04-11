@@ -23,7 +23,7 @@ describe('List Processes', () => {
   it('Should return an object', async () => {
     const {sut} = makeSutList(process[0].numProcess, process[0].court)
     const result = await sut.list()
-    const findProcess = await Processes.findOne({numProcess: processMock.numProcess})
+    const findProcess = await Processes.findOne({numProcess: arrayProcesses[0].numProcess})
 
     const jsonResult = JSON.stringify(result[0])
     const jsonFindProcess = JSON.stringify(findProcess)
